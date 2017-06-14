@@ -1,9 +1,28 @@
 import datetime
 from threading import Timer
+import time
+
+
+def always_run():
+    print('Always Run: ', datetime.datetime.utcnow())
+    Timer(60, always_run, []).start()
 
 
 def run():
-    print('Run: ', datetime.datetime.utcnow())
+    current_time = datetime.datetime.utcnow()
+
+    print('Run: ', current_time)
+
+    # So more stuffs
+
+    next_one_minute = current_time + datetime.timedelta(minutes=1)
+    time.sleep(5)
+    diff_sec = (next_one_minute - datetime.datetime.utcnow()).total_seconds()
+    # print(diff_sec)
+    if diff_sec > 0:
+        time.sleep(diff_sec)
+
+    always_run()
 
 
 def main():

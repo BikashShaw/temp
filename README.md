@@ -1,2 +1,1 @@
-This is a Temporary Repo!
-pip install --trusted-host pypi.python.org tweepy
+https://git-codecommit.us-east-1.amazonaws.com/v1/repos/OptionTracker
